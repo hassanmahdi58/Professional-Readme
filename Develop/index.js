@@ -23,28 +23,30 @@ const questions = [
       },
       {
         type: 'input',
-        name: 'information',
+        name: 'usage',
         message: 'add your usage information?',
       },
       {
         type: 'input',
-        name: 'contribution',
-        message: 'Provide contribution guidelines',
+        name: 'contributors',
+        message: 'Provide contributors',
       },
       {
         type: 'input',
-        name: 'testting',
+        name: 'test',
         message: 'What is your test instructions?',
+        default: 'npm test'
       },
       {
         type: 'list',
         name: 'license',
         message:'What is your  a license for the  application?',
         choices: ['MIT', 'ISC',  'Apache license 2.0', 'Microsoft Public License'],
+        default: ["MIT"],
       },
       {
         type: 'input',
-        name: 'Github',
+        name: 'username',
         message: 'Please add your github username?',
       },
       {
@@ -60,7 +62,7 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
       fs.writeFile(fileName, generateMarkdown(data), function(err) {
-        if(err) {
+        if(err) { 
             return console.log(err);
         }
         console.log("your README file has been generated");
@@ -70,8 +72,8 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-    .prompt(questions).then((answers) => {
-        writeToFile("README.md", answers);
+    .prompt(questions).then((data) => {
+        writeToFile("README.md", data);
       }
       )
    

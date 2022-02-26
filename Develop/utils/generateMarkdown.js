@@ -1,61 +1,63 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  
+  if (license) {
+    return ('http://img.shields.io/badge/license-${data.license}-blue.svg')
+  } else {
+    return " "
+  }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license) {
+    return `- [License](#license)`
+  } else {
+    return ''
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  
+  if (license ) {
+    return `This project uses the ${license} license.`
+  } else {
+    return ''
+  }
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `
-  # ${data.title}
-  ${renderLicenseBadge(data.license)}
-
+const generateMarkdown = data => {
+  return `# ${data.title}
+  ![Github licence](http://img.shields.io/badge/license-${data.license}-blue.svg)
   
-  1. [Description](#description)
-  2. [Contribution](#how-to-contribute) 
-  3. [Installation](#installation)
-  4. [Usage](#usage)
-  5. [License](#license)
-  6. [Tests](#tests)
-  7. [Contact-information](#contact-information)
+  ## Description 
+  ${data.description}
+  ## Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributors](#contributors)
+  * [Test](#test)
+  * [contact](#contact)
   
-  
-  ## Description
-  ${ data.description }
-
-  ## Installation
-  ${ data.installation }
-
-  ## Usage
-  ${ data.usage }
-  
-  ## How to Contribute
-  ${ data.contribution }
-
-  ## Tests
-  ${ data.test }
-  
-  
-  ## License
-  ${ data.license }
-  
-  
-  ### Contact-Information
-
-[Github Profile](https://github.com/hassanmahdi58/${data.username})
-${data.email}
+  ## Installation 
+  ${data.install}
+  ## Usage 
+  ${data.usage}
+  ## License 
+  This project is license under ${data.license}
+  ## Contributing 
+  ${data.contributors}
+  ## Test
+  ${data.test}
+  ## contact
+  contact me  ${data.email}. also you can visit mt Github Project at https://github.com/hassanmahdi58${data.github}.
 `;
 }
+
 
 
 module.exports = generateMarkdown;
