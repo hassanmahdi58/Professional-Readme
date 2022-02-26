@@ -54,7 +54,7 @@ const generateMarkdown = data => {
   ## Test
   ${data.test}
   ## contact
-  contact me  ${data.email}. also you can visit mt Github Project at https://github.com/hassanmahdi58${data.github}.
+  contact me  ${data.email}. also you can visit mt Github Project at https://github.com/${data.github}.
 `;
 }
 
