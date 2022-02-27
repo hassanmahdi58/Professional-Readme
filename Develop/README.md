@@ -14,7 +14,8 @@
   ## Installation 
   you can clone it to your local machine where you need to have nodejs.
   ## Usage 
-  This is a high professional README , where user answers questions in the command.
+  This is a high professional README , where user answers questions in the command. you can look more at the link.
+  https://www.youtube.com/watch?v=--ssc86bgDk
   ## License 
   This project is license under MIT
   ## Contributing 
